@@ -25,7 +25,7 @@ const userCtrl = new UserController(userUseCase)
  *
  */
 
-route.post(`/user`, userCtrl.insertCtrl)
-route.get(`/user`, userCtrl.getCtrl)
+route.post("", userCtrl.insertCtrl)
+route.get("", userCtrl.getCtrl)
 
 export default route
