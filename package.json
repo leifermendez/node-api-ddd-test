@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev":"nodemon ./src/app.ts",
-    "dev:ddd":"nodemon ./source/user/user.app.ts",
+    "dev": "nodemon source/app.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,10 +14,11 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
-    "mongoose": "^6.5.0",
-    "uuid": "^8.3.2",
     "inversify": "^6.0.1",
-    "reflect-metadata": "^0.1.13"
+    "mongoose": "^6.5.0",
+    "reflect-metadata": "^0.1.13",
+    "ts-node": "^10.9.1",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
