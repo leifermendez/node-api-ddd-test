@@ -1,4 +1,4 @@
-import { User } from "./models/user/User";
+import { User } from "./User";
 
 export interface UserRepository {
   findUserById(uuid: string): Promise<User | null>;

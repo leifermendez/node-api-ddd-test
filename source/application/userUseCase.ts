@@ -1,4 +1,4 @@
-import { UserRepository } from "../domain/user.repository";
+import { UserRepository } from "../domain/models/user/UserRepository";
 import { UserValue } from "../domain/user.value";
 
 export class UserUseCase {

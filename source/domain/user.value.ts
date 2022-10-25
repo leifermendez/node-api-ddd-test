@@ -1,7 +1,7 @@
 import { v4 as uuid } from "uuid";
-import { UserEntity } from "./user.entity";
+import { User } from "./models/user/User";
 
-export class UserValue implements UserEntity {
+export class UserValue implements User {
   uuid: string;
   name: string;
   email: string;

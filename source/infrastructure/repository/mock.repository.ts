@@ -1,8 +1,8 @@
 /**
  * Infra! Mongo 🙌
  */
-import { UserEntity } from "../../domain/user.entity";
-import { UserRepository } from "../../domain/user.repository";
+import { User } from "../../domain/models/user/User";
+import { UserRepository } from "../../domain/models/user/UserRepository";
 /**
  * MOCK!
  */
@@ -18,7 +18,7 @@ export class MockRepository implements UserRepository {
     const user = MOCK_USER
     return user;
   }
-  async registerUser(userIn: UserEntity): Promise<any> {
+  async registerUser(userIn: User): Promise<any> {
     const user = MOCK_USER
     return user;
   }
