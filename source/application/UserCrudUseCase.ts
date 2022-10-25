@@ -1,5 +1,5 @@
-import { UserRepository } from "../domain/models/user/UserRepository";
-import {User} from "../domain/models/user/User";
+import { UserRepository } from "../domain/models/users/UserRepository";
+import {User} from "../domain/models/users/User";
 
 export class UserCrudUseCase {
   constructor(private readonly userRepository: UserRepository) {}

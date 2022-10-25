@@ -1,8 +1,8 @@
 /**
  * Infra! Mongo 🙌
  */
-import { User } from "../../domain/models/user/User";
-import { UserRepository } from "../../domain/models/user/UserRepository";
+import { User } from "../../domain/models/users/User";
+import { UserRepository } from "../../domain/models/users/UserRepository";
 /**
  * MOCK!
  */
