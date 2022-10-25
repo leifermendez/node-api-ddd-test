@@ -1,7 +1,7 @@
 import { UserRepository } from "../domain/models/user/UserRepository";
 import {User} from "../domain/models/user/User";
 
-export class UserUseCase {
+export class UserCrudUseCase {
   constructor(private readonly userRepository: UserRepository) {}
 
   public  registerUser = async ( {name, email, description} ) => {

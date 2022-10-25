@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
-import { UserUseCase } from "../../application/userUseCase";
+import { UserCrudUseCase } from "../../application/UserCrudUseCase";
 
 export class UserController {
-  constructor(private userUseCase: UserUseCase) {
+  constructor(private userUseCase: UserCrudUseCase) {
     this.insertCtrl = this.insertCtrl.bind(this)
     this.getCtrl = this.getCtrl.bind(this)
   }

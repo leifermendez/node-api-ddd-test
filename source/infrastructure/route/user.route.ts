@@ -1,7 +1,6 @@
 import { Router } from "express";
-import { UserUseCase } from "../../application/userUseCase";
-import { UserController } from "../controller/user.ctrl";
-import { MockRepository } from "../repository/mock.repository";
+import { UserCrudUseCase } from "../../application/UserCrudUseCase";
+import { UserController } from "../controller/UserController";
 import { MongoRepository } from "../repository/mongo.repository";
 
 const route = Router()
@@ -14,7 +13,7 @@ const userRepo = new MongoRepository()
  * Iniciamos casos de uso
  */
 
-const userUseCase = new UserUseCase(userRepo)
+const userUseCase = new UserCrudUseCase(userRepo)
 
 /**
  * Iniciar User Controller
@@ -23,7 +22,7 @@ const userUseCase = new UserUseCase(userRepo)
 const userCtrl = new UserController(userUseCase)
 
 /**
- * 
+ *
  */
 
 route.post(`/user`, userCtrl.insertCtrl)
