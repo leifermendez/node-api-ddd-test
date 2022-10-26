@@ -4,12 +4,12 @@ const DB_URI = `${process.env.DB_URI}`;
 
 const dbInit = async () => {
   try {
-    console.log("Conectando a mongo");
+    console.log("Connecting to MongoDB");
     await connect(DB_URI);
-    console.log("Solo mollejadb");
+    console.log("Connected to MongoDB")
   } catch (e) {
     console.log("error:", e);
-    console.log("Fallo al conectar a mongo");
+    console.log("Failed trying to connect to  MongoDB");
   }
 };
 
