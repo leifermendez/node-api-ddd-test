@@ -1,7 +1,7 @@
 import "dotenv/config";
 import express from "express";
 import cors from "express";
-import dbInit from "../infrastructure/db/mongo";
+import dbInit from "./db/mongo";
 import * as http from "http";
 import { registerRouters } from "./routes";
 
