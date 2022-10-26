@@ -1,6 +1,6 @@
 import express from "express";
-import exampleRouter from "./ExampleRouter";
+import UserRoute from "./UserRoute";
 
 export const registerRouters = (app: express.Express) => {
-  app.use(exampleRouter);
+  app.use("users", UserRoute);
 };
