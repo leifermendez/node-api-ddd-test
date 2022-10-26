@@ -4,10 +4,10 @@ import { UserController } from "../../infrastructure/controller/user/UserControl
 
 const route = Router();
 //const userRepo = new MongoRepository();
-const userUseCase = new UserCrudUseCase(userRepo);
-const userCtrl = new UserController(userUseCase);
+//const userUseCase = new UserCrudUseCase(userRepo);
+//const userCtrl = new UserController(userUseCase);
 
-route.post("", userCtrl.insertCtrl);
-route.get("", userCtrl.getCtrl);
+//route.post("", userCtrl.insertCtrl);
+//route.get("", userCtrl.getCtrl);
 
 export default route;
