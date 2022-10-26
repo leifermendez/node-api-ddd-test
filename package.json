@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon source/app.ts",
-    "dev:ddd": "nodemon src/ExampleApp.ts",
+    "dev:ddd": "nodemon src/application/ExampleApp.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

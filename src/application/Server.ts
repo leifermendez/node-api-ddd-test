@@ -1,9 +1,9 @@
 import "dotenv/config";
 import express from "express";
 import cors from "express";
-import dbInit from "./infrastructure/db/mongo";
+import dbInit from "../infrastructure/db/mongo";
 import * as http from "http";
-import { registerRouters } from "./infrastructure/routes";
+import { registerRouters } from "./routes";
 
 export class Server {
   private readonly port: string;
