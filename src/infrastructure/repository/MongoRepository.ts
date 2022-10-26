@@ -1,7 +1,7 @@
 import { CrudOperations } from "./common/CrudOperations";
 import { Schema, model, Model } from "mongoose";
 
-export class MongoCrudOperations<Data> implements CrudOperations<string> {
+export class MongoRepository implements CrudOperations<string> {
   private readonly modelData: Model<any>;
 
   constructor(definition: any, collection: string) {
