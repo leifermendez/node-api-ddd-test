@@ -27,8 +27,8 @@ export class Server {
     return new Promise((resolve) => {
       this._httpServer = this.app.listen(this.port, () => {
         console.log(
-          `Mock Backend App is running at http://localhost:
-          ${this.port} in ${this.app.get("env")} mode`
+          `App is running at http://localhost:${this.port} in
+           ${this.app.get("env")} mode`
         );
         console.log("  Press CTRL-C to stop\n");
         resolve();
