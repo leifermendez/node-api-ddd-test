@@ -3,29 +3,13 @@ import { UserCrudUseCase } from "../../application/UserCrudUseCase";
 import { UserController } from "../controller/UserController";
 import { MongoRepository } from "../repository/mongo.repository";
 
-const route = Router()
-/**
- * Iniciar Repository
- */
-const userRepo = new MongoRepository()
+const route = Router();
+const userRepo = new MongoRepository();
+const userUseCase = new UserCrudUseCase(userRepo);
 
-/**
- * Iniciamos casos de uso
- */
+const userCtrl = new UserController(userUseCase);
 
-const userUseCase = new UserCrudUseCase(userRepo)
+route.post("", userCtrl.insertCtrl);
+route.get("", userCtrl.getCtrl);
 
-/**
- * Iniciar User Controller
- */
-
-const userCtrl = new UserController(userUseCase)
-
-/**
- *
- */
-
-route.post("", userCtrl.insertCtrl)
-route.get("", userCtrl.getCtrl)
-
-export default route
+export default route;

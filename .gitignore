@@ -4,4 +4,4 @@ dist
 /package-lock.json
 .idea/
 /db-volume/
-db-volume
+db-volume/*

@@ -3,12 +3,12 @@ import { UserCrudUseCase } from "../../application/UserCrudUseCase";
 
 export class UserController {
   constructor(private userUseCase: UserCrudUseCase) {
-    this.insertCtrl = this.insertCtrl.bind(this)
-    this.getCtrl = this.getCtrl.bind(this)
+    this.insertCtrl = this.insertCtrl.bind(this);
+    this.getCtrl = this.getCtrl.bind(this);
   }
 
   public async getCtrl({ query }: Request, res: Response) {
-    const { uuid = '' } = query;
+    const { uuid = "" } = query;
     const user = await this.userUseCase.getDetailUSer(`${uuid}`);
     res.send({ user });
   }
