@@ -1,7 +1,9 @@
 import { User } from "./User";
 
 export interface UserRepository {
-  findUserById(uuid: string): Promise<User | null>;
-  registerUser(user: User): Promise<User | null>;
-  listUser(): Promise<User[] | null>;
+  save(user: User): Promise<User>;
+  list(): Promise<User[]>;
+  findById(id: string): Promise<User>;
+  update(user: User, id: string): Promise<User>;
+  delete(id: string): Promise<void>;
 }
