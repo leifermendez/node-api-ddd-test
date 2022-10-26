@@ -6,7 +6,6 @@ import { MongoRepository } from "../repository/mongo.repository";
 const route = Router();
 const userRepo = new MongoRepository();
 const userUseCase = new UserCrudUseCase(userRepo);
-
 const userCtrl = new UserController(userUseCase);
 
 route.post("", userCtrl.insertCtrl);
