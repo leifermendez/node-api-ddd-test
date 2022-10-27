@@ -16,4 +16,15 @@ export class UserCrudUseCase {
   public getAllUsers = async () => {
     return await this.userRepository.list();
   };
+
+  public updateUser = async (
+    uuid: string,
+    { name, email, description }: any
+  ) => {
+    let userFound = await this.userRepository.findById(uuid);
+    const user = new User(name, email, description);
+    userFound = Object.assign(userFound, user);
+    userFound.uuid = uuid;
+    return await this.userRepository.save(userFound);
+  };
 }
