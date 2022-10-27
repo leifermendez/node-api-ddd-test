@@ -4,6 +4,7 @@ import cors from "express";
 import dbMongoInit from "./db/MongoConfig";
 import * as http from "http";
 import { registerRouters } from "./routes";
+import dbMySQLInit from "./db/MySQLConfig";
 
 export class Server {
   private readonly port: string;
@@ -21,6 +22,7 @@ export class Server {
 
   connectToDatabase = async () => {
     await dbMongoInit(); //connection to MongoDB
+    await dbMySQLInit(); //connection to MySQL
   };
 
   listen = async (): Promise<void> => {
