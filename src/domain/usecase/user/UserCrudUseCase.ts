@@ -12,4 +12,8 @@ export class UserCrudUseCase {
   public getDetailUSer = async (uuid: string) => {
     return await this.userRepository.findById(uuid);
   };
+
+  public getAllUsers = async () => {
+    return await this.userRepository.list();
+  };
 }
