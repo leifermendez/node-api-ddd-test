@@ -6,7 +6,7 @@ const dbInit = async () => {
   try {
     console.log("Connecting to MongoDB");
     await connect(DB_URI);
-    console.log("Connected to MongoDB")
+    console.log("Connected to MongoDB");
   } catch (e) {
     console.log("error:", e);
     console.log("Failed trying to connect to  MongoDB");
