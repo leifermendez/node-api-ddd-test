@@ -26,8 +26,8 @@ const repositoryMongo = new MongoRepository(schema, "users");
 const useCaseMongo = new UserCrudUseCase(repositoryMongo);
 const controllerMongo = new UserController(useCaseMongo);
 
-UserRoute.post("users", controllerMongo.insertCtrl);
-UserRoute.get("", controllerMongo.getCtrl);
+UserRoute.post("/mongo", controllerMongo.insertCtrl);
+UserRoute.get("/mongo", controllerMongo.getCtrl);
 
 const repositoryMySQL = new MySQLRepository(User);
 const useCaseMySQL = new UserCrudUseCase(repositoryMySQL);
