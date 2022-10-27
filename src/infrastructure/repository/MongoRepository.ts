@@ -20,14 +20,16 @@ export class MongoRepository implements CrudOperations<string> {
   }
 
   async findById(uuid: string): Promise<any> {
-    return this.modelData.findOne({ uuid: uuid });
+    return this.modelData.findOne({ uuid });
   }
 
-  async update(entity: any, id: string): Promise<any> {
-    return this.modelData.findOneAndUpdate({ _id: id }, entity, { new: true });
+  async update(entity: any, uuid: string): Promise<any> {
+    return this.modelData.findOneAndUpdate({ uuid }, entity, { new: true });
   }
 
-  async delete(id: string): Promise<void> {
-    this.modelData.deleteOne({ id });
+  async delete(uuid: string): Promise<void> {
+    console.log(uuid);
+    const entityFound = await this.findById(uuid);
+    entityFound.delete();
   }
 }
