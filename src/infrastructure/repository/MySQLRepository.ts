@@ -2,7 +2,7 @@ import { MysqlDataSource } from "../../application/db/MySQLConfig";
 import { CrudOperations } from "./common/CrudOperations";
 import { Repository } from "typeorm/repository/Repository";
 
-export class MySQLRepository implements CrudOperations<number> {
+export class MySQLRepository implements CrudOperations<string> {
   private readonly repository: Repository<any>;
 
   constructor(entity: any) {
@@ -17,17 +17,17 @@ export class MySQLRepository implements CrudOperations<number> {
     return await this.repository.find();
   }
 
-  async findById(id: number): Promise<any> {
+  async findById(id: string): Promise<any> {
     return await this.repository.findOneBy({ id });
   }
 
-  async update(entity: any, id: number): Promise<any> {
+  async update(entity: any, id: string): Promise<any> {
     const entityFound = this.repository.findOneBy({ id });
     const entitySaved = Object.assign(entityFound, entity);
     return await this.repository.save(entitySaved);
   }
 
-  async delete(id: number): Promise<void> {
+  async delete(id: string): Promise<void> {
     await this.repository.delete(id);
   }
 }
