@@ -16,6 +16,7 @@ UserRoute.post("/mongo", controllerMongo.registerUser);
 UserRoute.get("/mongo", controllerMongo.getDetailUSer);
 UserRoute.get("/mongo/all", controllerMongo.getAllUsers);
 UserRoute.put("/mongo", controllerMongo.updateUser);
+UserRoute.delete("/mongo", controllerMongo.deleteUser);
 
 const repositoryMySQL = new MySQLRepository(UserEntity);
 const useCaseMySQL = new UserCrudUseCase(repositoryMySQL);

@@ -27,4 +27,10 @@ export class UserCrudUseCase {
     userFound.uuid = uuid;
     return await this.userRepository.save(userFound);
   };
+
+  public deleteUser = async (uuid: string) => {
+    const userFound = await this.userRepository.findById(uuid);
+    await this.userRepository.delete(uuid);
+    return userFound;
+  };
 }

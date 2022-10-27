@@ -29,4 +29,10 @@ export class UserController {
     const userUpdated = await this.userUseCase.updateUser(uuid as string, body);
     res.send(userUpdated);
   };
+
+  public deleteUser = async ({ query }: Request, res: Response) => {
+    const { uuid } = query;
+    const userDeleted = await this.userUseCase.deleteUser(uuid as string);
+    res.send({ message: "Successfully", body: userDeleted });
+  };
 }
