@@ -17,17 +17,17 @@ export class MySQLRepository implements CrudOperations<string> {
     return await this.repository.find();
   }
 
-  async findById(id: string): Promise<any> {
-    return await this.repository.findOneBy({ id });
+  async findById(uuid: string): Promise<any> {
+    return await this.repository.findOneBy({ uuid });
   }
 
-  async update(entity: any, id: string): Promise<any> {
-    const entityFound = this.repository.findOneBy({ id });
+  async update(entity: any, uuid: string): Promise<any> {
+    const entityFound = this.repository.findOneBy({ uuid });
     const entitySaved = Object.assign(entityFound, entity);
     return await this.repository.save(entitySaved);
   }
 
-  async delete(id: string): Promise<void> {
-    await this.repository.delete(id);
+  async delete(uuid: string): Promise<void> {
+    await this.repository.delete(uuid);
   }
 }
