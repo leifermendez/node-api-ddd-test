@@ -33,8 +33,8 @@ const repositoryMySQL = new MySQLRepository(User);
 const useCaseMySQL = new UserCrudUseCase(repositoryMySQL);
 const controllerMySQL = new UserController(useCaseMySQL);
 
-//UserRoute.post("mysql/", controllerMySQL.insertCtrl);
-//UserRoute.get("mysql/", controllerMySQL.getCtrl);
+UserRoute.post("/mysql", controllerMySQL.insertCtrl);
+UserRoute.get("/mysql", controllerMySQL.getCtrl);
 
 
 export default UserRoute;

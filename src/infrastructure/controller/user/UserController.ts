@@ -8,7 +8,7 @@ export class UserController {
   }
 
   public async getCtrl({ query }: Request, res: Response) {
-    const { uuid = "" } = query;
+    const { uuid } = query;
     const user = await this.userUseCase.getDetailUSer(`${uuid}`);
     res.send({ user });
   }

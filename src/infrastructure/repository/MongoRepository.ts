@@ -1,5 +1,5 @@
 import { CrudOperations } from "./common/CrudOperations";
-import { Schema, model, Model } from "mongoose";
+import { model, Model, Schema } from "mongoose";
 
 export class MongoRepository implements CrudOperations<string> {
   private readonly modelData: Model<any>;
@@ -19,8 +19,8 @@ export class MongoRepository implements CrudOperations<string> {
     return this.modelData.find();
   }
 
-  async findById(id: string): Promise<any> {
-    return this.modelData.findOne({ id });
+  async findById(uuid: string): Promise<any> {
+    return this.modelData.findOne({ uuid: uuid });
   }
 
   async update(entity: any, id: string): Promise<any> {
