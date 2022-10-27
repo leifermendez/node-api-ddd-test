@@ -3,8 +3,8 @@ import { UserCrudUseCase } from "../../domain/usecase/user/UserCrudUseCase";
 import { UserController } from "../../infrastructure/controller/user/UserController";
 import { MongoRepository } from "../../infrastructure/repository/MongoRepository";
 import { MySQLRepository } from "../../infrastructure/repository/MySQLRepository";
-import { User } from "../../domain/models/user/User";
 import userSchema from "../../infrastructure/data/UserMongo";
+import { UserEntity } from "../../infrastructure/data/UserEntity";
 
 const UserRoute = Router();
 
@@ -15,7 +15,7 @@ const controllerMongo = new UserController(useCaseMongo);
 UserRoute.post("/mongo", controllerMongo.insertCtrl);
 UserRoute.get("/mongo", controllerMongo.getCtrl);
 
-const repositoryMySQL = new MySQLRepository(User);
+const repositoryMySQL = new MySQLRepository(UserEntity);
 const useCaseMySQL = new UserCrudUseCase(repositoryMySQL);
 const controllerMySQL = new UserController(useCaseMySQL);
 
