@@ -21,8 +21,8 @@ export class Server {
   }
 
   connectToDatabase = async () => {
-    await dbMongoInit(); //connection to MongoDB
-    await dbMySQLInit(); //connection to MySQL
+    await dbMongoInit();
+    await dbMySQLInit();
   };
 
   listen = async (): Promise<void> => {

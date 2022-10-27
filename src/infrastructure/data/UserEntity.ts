@@ -1,7 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
-import { Mapper } from "../common/Mapper";
-@Entity({name: "users"})
-export class UserEntity implements Mapper<any, UserEntity> {
+@Entity({ name: "users" })
+export class UserEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -13,8 +12,4 @@ export class UserEntity implements Mapper<any, UserEntity> {
   email: string;
   @Column()
   description: string;
-
-  map(src: any): UserEntity {
-    return Object.assign(new UserEntity(), src);
-  }
 }

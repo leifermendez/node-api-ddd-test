@@ -1,5 +1,5 @@
 import { Server } from "./Server";
-export class ExampleApp {
+export class App {
   server?: Server;
 
   async start(): Promise<void> {
@@ -18,7 +18,7 @@ export class ExampleApp {
 }
 
 try {
-  const example: ExampleApp = new ExampleApp();
+  const example: App = new App();
   example.start().then();
 } catch (e) {
   console.log(e);

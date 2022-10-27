@@ -4,3 +4,4 @@ dist
 .idea/
 /db-volume/
 db-volume/*
+.env
