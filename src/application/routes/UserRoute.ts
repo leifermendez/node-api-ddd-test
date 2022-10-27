@@ -24,5 +24,8 @@ const controllerMySQL = new UserController(useCaseMySQL);
 
 UserRoute.post("/mysql", controllerMySQL.registerUser);
 UserRoute.get("/mysql", controllerMySQL.getDetailUSer);
+UserRoute.get("/mysql/all", controllerMySQL.getAllUsers);
+UserRoute.put("/mysql", controllerMySQL.updateUser);
+UserRoute.delete("/mysql", controllerMySQL.deleteUser);
 
 export default UserRoute;

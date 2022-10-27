@@ -28,6 +28,6 @@ export class MySQLRepository implements CrudOperations<string> {
   }
 
   async delete(uuid: string): Promise<void> {
-    await this.repository.delete(uuid);
+    await this.repository.delete({ uuid });
   }
 }
