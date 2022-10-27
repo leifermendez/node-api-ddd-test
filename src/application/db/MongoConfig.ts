@@ -1,8 +1,8 @@
 import { connect } from "mongoose";
 
-const DB_URI = `${process.env.DB_URI}`;
+const DB_URI = `${process.env.DB_MONGO_URI}`;
 
-const dbInit = async () => {
+const dbMongoInit = async () => {
   try {
     console.log("Connecting to MongoDB");
     await connect(DB_URI);
@@ -13,4 +13,4 @@ const dbInit = async () => {
   }
 };
 
-export default dbInit;
+export default dbMongoInit;

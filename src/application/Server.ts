@@ -1,7 +1,7 @@
 import "dotenv/config";
 import express from "express";
 import cors from "express";
-import dbInit from "./db/MongoConfig";
+import dbMongoInit from "./db/MongoConfig";
 import * as http from "http";
 import { registerRouters } from "./routes";
 
@@ -20,7 +20,7 @@ export class Server {
   }
 
   connectToDatabase = async () => {
-    await dbInit(); //connection to MongoDB
+    await dbMongoInit(); //connection to MongoDB
   };
 
   listen = async (): Promise<void> => {
