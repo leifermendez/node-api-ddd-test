@@ -1,5 +1,5 @@
 {
-  "name": "yt-node-api-ts",
+  "name": "node-api-ddd",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -17,6 +17,7 @@
     "inversify": "^6.0.1",
     "mongoose": "^6.5.0",
     "mysql": "^2.18.1",
+    "node-cron": "^3.0.2",
     "pg": "^8.8.0",
     "prettier": "^2.7.1",
     "reflect-metadata": "^0.1.13",
