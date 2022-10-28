@@ -6,6 +6,7 @@ import * as http from "http";
 import { registerRouters } from "./routes";
 import dbMySQLInit from "./db/MySQLConfig";
 import dbPostgresSQLInit from "./db/PostgreSQLConfig";
+import { schedulerGetAllUsers } from "../infrastructure/scheduler/user/UserScheduler";
 
 export class Server {
   private readonly port: string;
@@ -19,12 +20,17 @@ export class Server {
     this.app.use(express.json());
     this.connectToDatabase().then();
     registerRouters(this.app);
+    this.schedulerInit().then();
   }
 
   connectToDatabase = async () => {
     await dbMongoInit();
     await dbMySQLInit();
-    await dbPostgresSQLInit()
+    await dbPostgresSQLInit();
+  };
+
+  schedulerInit = async () => {
+    await schedulerGetAllUsers();
   };
 
   listen = async (): Promise<void> => {

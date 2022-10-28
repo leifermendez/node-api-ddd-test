@@ -10,15 +10,10 @@ export class SchedulerConfig {
     this._lamda = lamda;
   }
 
-  get expression(): string {
-    return this._expression;
-  }
-
-  get lamda(): Function {
-    return this._lamda;
-  }
-
-  start = () => {
-    cron.schedule(this._expression, this._lamda);
+  start = async () => {
+    cron.schedule(this._expression, async () => {
+      const result = await this._lamda();
+      console.log("result => ", result);
+    });
   };
 }
